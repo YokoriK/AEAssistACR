@@ -1,0 +1,5 @@
+C:\Users\Administrator\RiderProjects\only1acr\LoGya\obj\Debug\LoGya.csproj.AssemblyReference.cache
+C:\Users\Administrator\RiderProjects\only1acr\LoGya\obj\Debug\LoGya.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\RiderProjects\only1acr\LoGya\obj\Debug\LoGya.AssemblyInfoInputs.cache
+C:\Users\Administrator\RiderProjects\only1acr\LoGya\obj\Debug\LoGya.AssemblyInfo.cs
+C:\Users\Administrator\RiderProjects\only1acr\LoGya\obj\Debug\LoGya.csproj.CoreCompileInputs.cache

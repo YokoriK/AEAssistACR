@@ -1,0 +1,48 @@
+﻿using AEAssist;
+using AEAssist.CombatRoutine.Module;
+using AEAssist.Helper;
+using AEAssist.MemoryApi;
+using LoGya.Common;
+
+
+namespace LoGya.SlotResolver.GCD
+{
+    public class Base : ISlotResolver
+    {
+        private static uint 上个连击 => Core.Resolve<MemApiSpell>().GetLastComboSpellId();
+        
+        public int Check()
+        {
+            return 0;
+        }
+
+        private static uint GetSpells()
+        {
+            var enemyCount = TargetHelper.GetNearbyEnemyCount(5);
+
+            if (Data.Spells.秘银暴风.IsUnlock() &&
+                上个连击 == Data.Spells.超压斧 && enemyCount >= 3)
+                return Data.Spells.秘银暴风;
+
+            if (Data.Spells.超压斧.IsUnlock() &&
+                enemyCount >= 3)
+                return Data.Spells.超压斧;
+            
+            if (Data.Spells.红斩.IsUnlock() && 上个连击 == Data.Spells.凶残裂 && Helper.Buff时间小于(Data.Buffs.战场暴风, 20000))
+                return Data.Spells.红斩;
+            
+            if (Data.Spells.绿斩.IsUnlock() && 上个连击 == Data.Spells.凶残裂)
+                return Data.Spells.绿斩;
+
+            if (Data.Spells.凶残裂.IsUnlock() && 上个连击 == Data.Spells.重劈)
+                return Data.Spells.凶残裂;
+
+            return Data.Spells.重劈;
+        }
+
+        public void Build(Slot slot)
+        {
+            slot.Add(GetSpells().GetSpell());
+        }
+    }
+}
