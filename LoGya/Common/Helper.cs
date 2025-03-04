@@ -80,6 +80,12 @@ public class Helper
         if (!Core.Me.HasAura(buffId)) return false;
         return GetAuraTimeLeft(buffId) <= timeLeft;
     }
+    
+    public static bool 是否续红斩(uint buffId, int timeLeft)
+    {
+        if (!Core.Me.HasAura(buffId)) return true;
+        return GetAuraTimeLeft(buffId) <= timeLeft;
+    }
 
     /// <summary>
     /// 目标有buff且时间小于，有buff参数如果为false，则当目标没有玩家的buff是也返回true

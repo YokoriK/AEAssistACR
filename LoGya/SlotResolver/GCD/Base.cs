@@ -3,6 +3,7 @@ using AEAssist.CombatRoutine.Module;
 using AEAssist.Helper;
 using AEAssist.MemoryApi;
 using LoGya.Common;
+using LoGya.QtUI;
 
 
 namespace LoGya.SlotResolver.GCD
@@ -20,15 +21,16 @@ namespace LoGya.SlotResolver.GCD
         {
             var enemyCount = TargetHelper.GetNearbyEnemyCount(5);
 
-            if (Data.Spells.秘银暴风.IsUnlock() &&
+            if (Qt.Instance.GetQt("AOE") && Data.Spells.秘银暴风.IsUnlock() &&
                 上个连击 == Data.Spells.超压斧 && enemyCount >= 3)
                 return Data.Spells.秘银暴风;
 
-            if (Data.Spells.超压斧.IsUnlock() &&
+            if (Qt.Instance.GetQt("AOE") && Data.Spells.超压斧.IsUnlock() &&
                 enemyCount >= 3)
                 return Data.Spells.超压斧;
             
-            if (Data.Spells.红斩.IsUnlock() && 上个连击 == Data.Spells.凶残裂 && Helper.Buff时间小于(Data.Buffs.战场暴风, 20000))
+            if (Data.Spells.红斩.IsUnlock() && 上个连击 == Data.Spells.凶残裂 && 
+                Helper.是否续红斩(Data.Buffs.战场暴风, 20000))
                 return Data.Spells.红斩;
             
             if (Data.Spells.绿斩.IsUnlock() && 上个连击 == Data.Spells.凶残裂)

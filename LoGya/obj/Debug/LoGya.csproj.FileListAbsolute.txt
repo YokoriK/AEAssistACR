@@ -3,3 +3,16 @@ C:\Users\Administrator\RiderProjects\only1acr\LoGya\obj\Debug\LoGya.GeneratedMSB
 C:\Users\Administrator\RiderProjects\only1acr\LoGya\obj\Debug\LoGya.AssemblyInfoInputs.cache
 C:\Users\Administrator\RiderProjects\only1acr\LoGya\obj\Debug\LoGya.AssemblyInfo.cs
 C:\Users\Administrator\RiderProjects\only1acr\LoGya\obj\Debug\LoGya.csproj.CoreCompileInputs.cache
+D:\Hack\AEAssist\ACR\LoGya\LoGya.deps.json
+D:\Hack\AEAssist\ACR\LoGya\LoGya.dll
+D:\Hack\AEAssist\ACR\LoGya\LoGya.pdb
+C:\Users\Administrator\RiderProjects\LoGya\LoGya\obj\Debug\LoGya.csproj.AssemblyReference.cache
+C:\Users\Administrator\RiderProjects\LoGya\LoGya\obj\Debug\LoGya.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\RiderProjects\LoGya\LoGya\obj\Debug\LoGya.AssemblyInfoInputs.cache
+C:\Users\Administrator\RiderProjects\LoGya\LoGya\obj\Debug\LoGya.AssemblyInfo.cs
+C:\Users\Administrator\RiderProjects\LoGya\LoGya\obj\Debug\LoGya.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\RiderProjects\LoGya\LoGya\obj\Debug\LoGya.sourcelink.json
+C:\Users\Administrator\RiderProjects\LoGya\LoGya\obj\Debug\LoGya.dll
+C:\Users\Administrator\RiderProjects\LoGya\LoGya\obj\Debug\refint\LoGya.dll
+C:\Users\Administrator\RiderProjects\LoGya\LoGya\obj\Debug\LoGya.pdb
+C:\Users\Administrator\RiderProjects\LoGya\LoGya\obj\Debug\ref\LoGya.dll

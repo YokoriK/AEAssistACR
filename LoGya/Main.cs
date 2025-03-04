@@ -17,6 +17,7 @@ public class WarRotationEntry : IRotationEntry, IDisposable
     
     private readonly List<SlotResolverData> _SlotResolvers =
     [
+        new(new 飞锯狂魂(),SlotMode.Gcd),
         new(new Base(),SlotMode.Gcd),
     ];
     
