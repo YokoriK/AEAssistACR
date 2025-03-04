@@ -3,6 +3,7 @@ using AEAssist.CombatRoutine.Module;
 using LoGya.SlotResolver.GCD;
 using LoGya.QtUI;
 using LoGya.Common;
+using LoGya.SlotResolver.Ability;
 using LoGya.Triggers;
 
 namespace LoGya;
@@ -15,17 +16,22 @@ public class WarRotationEntry : IRotationEntry, IDisposable
     private readonly int _minLevel = 70;
     private readonly int _maxLevel = 100;
     
-    private readonly List<SlotResolverData> _SlotResolvers =
+    private readonly List<SlotResolverData> _slotResolvers =
     [
         new(new 飞锯狂魂(),SlotMode.Gcd),
         new(new Base(),SlotMode.Gcd),
+        
+        new(new 战壕(),SlotMode.OffGcd),
+        new(new 解放(),SlotMode.OffGcd),
+        new(new 动乱群山(),SlotMode.OffGcd),
+        new(new 猛攻(),SlotMode.OffGcd)
     ];
     
     public Rotation? Build(string settingFolder)
     {
         WarSettings.Build(settingFolder);
         Qt.Build();
-        var rot = new Rotation(_SlotResolvers)
+        var rot = new Rotation(_slotResolvers)
         {
             TargetJob = _targetJob,
             AcrType = _acrType,

@@ -11,12 +11,15 @@ namespace LoGya.SlotResolver.GCD;
 public class 飞锯狂魂 : ISlotResolver
 {
     private static int 兽魂 => Core.Resolve<JobApi_Warrior>().BeastGauge;
-    
     public int Check()
     {
+        if (Core.Me.HasAura(Data.Buffs.原初的解放)) return 1;
+        
         if (兽魂 < 50) return -1;
         
-        if(Qt.Instance.GetQt("倾泻资源")) return 1;
+        if (兽魂 >= 80) return 2;
+        
+        if (Qt.Instance.GetQt("倾泻资源")) return 3;
         
         return -1;
     }

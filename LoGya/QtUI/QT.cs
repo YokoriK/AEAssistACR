@@ -21,6 +21,7 @@ public static class Qt
         Instance.SetQt("盾姿", false);
         Instance.SetQt("爆发药", false);
         Instance.SetQt("倾泻资源", true);
+        Instance.SetQt("优先三锯", true);
     }
     
     public static void Build()
@@ -32,6 +33,7 @@ public static class Qt
         Instance.AddQt("盾姿", false);
         Instance.AddQt("AOE", true);
         Instance.AddQt("倾泻资源", true, "不留战壕");
+        Instance.AddQt("优先三锯", true, "优先打解放给的3个飞锯");
         
         Instance.AddHotkey("LB", new HotKeyResolver_LB());
         Instance.AddHotkey("防击退",

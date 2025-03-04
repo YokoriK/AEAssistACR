@@ -34,7 +34,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="SlotResolver\Ability\" />
       <Folder Include="SlotResolver\Opener\" />
     </ItemGroup>
     
