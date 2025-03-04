@@ -2,6 +2,8 @@
 using AEAssist.CombatRoutine.Module;
 using LoGya.SlotResolver.GCD;
 using LoGya.QtUI;
+using LoGya.Common;
+using LoGya.Triggers;
 
 namespace LoGya;
 
@@ -30,8 +32,8 @@ public class WarRotationEntry : IRotationEntry, IDisposable
             MaxLevel = _maxLevel,
         };
         //rot.AddOpener(level => level < _minLevel ? null : new OpenerBase());
-        rot.SetRotationEventHandler(new EventHandler());
-        rot.AddTriggerAction(new TriggerActionQt(), new TriggerActionHotkey(), new 提拉纳阈值设置());
+        //rot.SetRotationEventHandler(new EventHandler());
+        rot.AddTriggerAction(new TriggerActionQt(), new TriggerActionHotkey());
         rot.AddTriggerCondition(new TriggerCondQt());
         rot.AddCanUseHighPrioritySlotCheck(Helper.HighPrioritySlotCheckFunc);
         return rot;
