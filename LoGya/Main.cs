@@ -44,7 +44,7 @@ public class WarRotationEntry : IRotationEntry, IDisposable
             MaxLevel = _maxLevel,
         };
         rot.AddOpener(level => level < _minLevel ? null : new OpenerLv100猛攻());
-        //rot.SetRotationEventHandler(new EventHandler());
+        rot.SetRotationEventHandler(new EventHandler());
         rot.AddTriggerAction(new TriggerActionQt(), new TriggerActionHotkey());
         rot.AddTriggerCondition(new TriggerCondQt());
         rot.AddCanUseHighPrioritySlotCheck(Helper.HighPrioritySlotCheckFunc);

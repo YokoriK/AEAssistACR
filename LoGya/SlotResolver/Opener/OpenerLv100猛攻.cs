@@ -39,7 +39,7 @@ public class OpenerLv100猛攻 : IOpener
 
     private static void Step1(Slot slot)
     {
-        if(!(Core.Resolve<MemApiSpell>().GetLastComboSpellId() == Spells.重劈)) slot.Add(Spells.重劈.GetSpell());
+        if(Core.Resolve<MemApiSpell>().GetLastComboSpellId() != Spells.重劈) slot.Add(Spells.重劈.GetSpell());
         slot.Add(Spells.战壕.GetSpell());
     }
     private static void Step2(Slot slot)
