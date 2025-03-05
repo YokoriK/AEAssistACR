@@ -21,7 +21,7 @@ public class 动乱群山 : ISlotResolver
     {
         var enemyCount = TargetHelper.GetNearbyEnemyCount(5);
         
-        if(enemyCount >= 3)
+        if(enemyCount >= 3 && Data.Spells.群山.GetSpell().IsUnlock())
             return Data.Spells.群山;
 
         return Data.Spells.动乱;

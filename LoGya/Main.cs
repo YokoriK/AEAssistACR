@@ -23,8 +23,8 @@ public class WarRotationEntry : IRotationEntry, IDisposable
     private readonly List<SlotResolverData> _slotResolvers =
     [
         new(new 飞斧(), SlotMode.Gcd),
-        new(new 飞锯狂魂(),SlotMode.Gcd),
         new(new 蛮荒(), SlotMode.Gcd),
+        new(new 飞锯狂魂(),SlotMode.Gcd),
         new(new Base(), SlotMode.Gcd),
         
         new(new 解放(),SlotMode.OffGcd),

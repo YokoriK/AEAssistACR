@@ -1,4 +1,6 @@
-﻿namespace LoGya.SlotResolver.Data;
+﻿using AEAssist;
+
+namespace LoGya.SlotResolver.Data;
 
 public static class Spells
 {
@@ -29,6 +31,8 @@ public static class Spells
         勇猛 = 16464,
         直觉 = 3551,
         血气 = 25751,
+        铁壁 = 7531,
+        血仇 = 7535,
         群山 = 25752,
         复仇 = 44,
         戮罪 = 36923,
@@ -36,4 +40,11 @@ public static class Spells
         狂魂 = 16465,
         怒震 = 36924,
         尽毁 = 36925;
+
+    public static uint 大减 =>
+        Core.Me.Level >= 92 ? 戮罪 : 复仇;
+
+    public static uint 血气switch =>
+        Core.Me.Level >= 82 ? 血气 : 直觉;
+    
 }

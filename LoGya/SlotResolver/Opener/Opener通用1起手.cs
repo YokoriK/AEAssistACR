@@ -50,12 +50,12 @@ public class Opener通用1起手 : IOpener
     {
         slot.Add(Spells.红斩.GetSpell());
         slot.Add(Spells.解放.GetSpell());
-        if (Qt.Instance.GetQt("爆发药")) slot.Add(Spell.CreatePotion());
+        slot.Add(Qt.Instance.GetQt("爆发药") ? Spell.CreatePotion() : Spells.动乱.GetSpell());
     }
     private static void Step4(Slot slot)
     {
         slot.Add(Spells.狂魂.GetSpell().IsUnlock() ? Spells.狂魂.GetSpell() : Spells.锯爆.GetSpell());
-        slot.Add(Spells.动乱.GetSpell());
+        if (Spells.动乱.GetSpell().IsReadyWithCanCast()) slot.Add(Spells.动乱.GetSpell());
         if (Spells.战壕.GetSpell().IsReadyWithCanCast()) slot.Add(Spells.战壕.GetSpell());
     }
 }

@@ -3,6 +3,7 @@ using AEAssist.CombatRoutine.View.JobView;
 using AEAssist.CombatRoutine.View.JobView.HotkeyResolver;
 using LoGya.SlotResolver.Data;
 using LoGya.Common;
+using LoGya.QtUI.Hotkey;
 
 namespace LoGya.QtUI;
 
@@ -36,6 +37,16 @@ public static class Qt
             new HotKeyResolver(SpellsDefine.ArmsLength, SpellTargetType.Self, false));
         Instance.AddHotkey("疾跑", new HotKeyResolver_疾跑());
         Instance.AddHotkey("爆发药", new HotKeyResolver_Potion());
+        Instance.AddHotkey("大减", new 大减Hotkey());
+        Instance.AddHotkey("铁壁", new 铁壁Hotkey());
+        Instance.AddHotkey("血气", new 血气Hotkey());
+        Instance.AddHotkey("死斗", new 死斗Hotkey());
+        Instance.AddHotkey("战栗", new 战栗Hotkey());
+        Instance.AddHotkey("血仇", new 血仇Hotkey());
+        Instance.AddHotkey("摆脱", new 摆脱Hotkey());
+        Instance.AddHotkey("泰然", new 泰然Hotkey());
+        Instance.AddHotkey("挑衅", new 挑衅Hotkey());
+        Instance.AddHotkey("勇猛", new 勇猛Hotkey());
         
     }
 }
