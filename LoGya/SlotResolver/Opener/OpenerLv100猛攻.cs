@@ -3,7 +3,7 @@ using AEAssist.CombatRoutine;
 using AEAssist.CombatRoutine.Module;
 using AEAssist.CombatRoutine.Module.Opener;
 using AEAssist.Helper;
-using AEAssist.JobApi;
+using AEAssist.MemoryApi;
 using LoGya.QtUI;
 using LoGya.SlotResolver.Data;
 
@@ -13,9 +13,9 @@ public class OpenerLv100猛攻 : IOpener
 {
     public int StartCheck()
     {
-        if(!Data.Spells.解放.GetSpell().IsReadyWithCanCast()) return -1;
-        if(!Data.Spells.战壕.GetSpell().IsReadyWithCanCast()) return -2;
-        if(!Data.Spells.动乱.GetSpell().IsReadyWithCanCast()) return -3;
+        if(!Spells.解放.GetSpell().IsReadyWithCanCast()) return -1;
+        if(!Spells.战壕.GetSpell().IsReadyWithCanCast()) return -2;
+        if(!Spells.动乱.GetSpell().IsReadyWithCanCast()) return -3;
         return 0;
     }
     
@@ -34,28 +34,28 @@ public class OpenerLv100猛攻 : IOpener
         Qt.Reset();
 
         const int startTime = 15000;
-        countDownHandler.AddAction(600, Data.Spells.猛攻, SpellTargetType.Target);
+        countDownHandler.AddAction(700, Spells.猛攻, SpellTargetType.Target);
     }
 
     private static void Step1(Slot slot)
     {
-        slot.Add(Data.Spells.重劈.GetSpell());
-        slot.Add(Data.Spells.战壕.GetSpell());
+        if(!(Core.Resolve<MemApiSpell>().GetLastComboSpellId() == Spells.重劈)) slot.Add(Spells.重劈.GetSpell());
+        slot.Add(Spells.战壕.GetSpell());
     }
     private static void Step2(Slot slot)
     {
-        slot.Add(Data.Spells.凶残裂.GetSpell());
+        slot.Add(Spells.凶残裂.GetSpell());
     }
     private static void Step3(Slot slot)
     {
-        slot.Add(Data.Spells.红斩.GetSpell());
-        slot.Add(Data.Spells.解放.GetSpell());
+        slot.Add(Spells.红斩.GetSpell());
+        slot.Add(Spells.解放.GetSpell());
         if (Qt.Instance.GetQt("爆发药")) slot.Add(Spell.CreatePotion());
     }
     private static void Step4(Slot slot)
     {
-        slot.Add(Data.Spells.狂魂.GetSpell());
-        slot.Add(Data.Spells.动乱.GetSpell());
-        if (Data.Spells.战壕.GetSpell().IsReadyWithCanCast()) slot.Add(Data.Spells.战壕.GetSpell());
+        slot.Add(Spells.狂魂.GetSpell());
+        slot.Add(Spells.动乱.GetSpell());
+        if (Spells.战壕.GetSpell().IsReadyWithCanCast()) slot.Add(Spells.战壕.GetSpell());
     }
 }

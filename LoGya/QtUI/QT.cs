@@ -16,9 +16,6 @@ public static class Qt
     public static void Reset()
     {
         Instance.SetQt("AOE", true);
-        Instance.SetQt("猛攻", true);
-        Instance.SetQt("飞斧", true);
-        Instance.SetQt("盾姿", false);
         Instance.SetQt("爆发药", false);
         Instance.SetQt("倾泻资源", true);
         Instance.SetQt("优先三锯", true);
@@ -29,11 +26,8 @@ public static class Qt
     {
         Instance = new JobViewWindow(WarSettings.Instance.JobViewSave, WarSettings.Instance.Save, "Logya战士");
         Instance.AddQt("爆发药", false);
-        Instance.AddQt("猛攻", true);
-        Instance.AddQt("飞斧", true);
-        Instance.AddQt("盾姿", false);
         Instance.AddQt("AOE", true);
-        Instance.AddQt("倾泻资源", true, "不留战壕");
+        Instance.AddQt("倾泻资源", true, "不留战壕，超过80兽魂才打fc");
         Instance.AddQt("优先三锯", true, "优先打解放给的3个飞锯");
         Instance.AddQt("不留猛攻", false, "默认留1层猛攻");
         

@@ -11,5 +11,13 @@ namespace LoGya;
 
 public class EventHandler
 {
-    
+    public void OnResetBattle()
+    {
+        BattleData.Instance = new BattleData();
+    }
+
+    public async Task OnNoTarget()
+    {
+        
+    }
 }
