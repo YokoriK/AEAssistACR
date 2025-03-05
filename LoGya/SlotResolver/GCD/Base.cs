@@ -20,6 +20,14 @@ namespace LoGya.SlotResolver.GCD
         private static uint GetSpells()
         {
             var enemyCount = TargetHelper.GetNearbyEnemyCount(5);
+            
+            if (Qt.Instance.GetQt("AOE") && Data.Spells.秘银暴风.IsUnlock() &&
+                上个连击 == Data.Spells.超压斧 && enemyCount == 2 && Core.Me.Level == 80)
+                return Data.Spells.秘银暴风;
+            
+            if (Qt.Instance.GetQt("AOE") && Data.Spells.超压斧.IsUnlock() &&
+                enemyCount == 2 && Core.Me.Level == 80)
+                return Data.Spells.超压斧;
 
             if (Qt.Instance.GetQt("AOE") && Data.Spells.秘银暴风.IsUnlock() &&
                 上个连击 == Data.Spells.超压斧 && enemyCount >= 3)
