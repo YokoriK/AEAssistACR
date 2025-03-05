@@ -1,5 +1,8 @@
 ﻿using AEAssist.CombatRoutine;
 using AEAssist.CombatRoutine.Module;
+using AEAssist.CombatRoutine.Module.Opener;
+using AEAssist;
+using AEAssist.Extension;
 using LoGya.SlotResolver.GCD;
 using LoGya.QtUI;
 using LoGya.Common;
@@ -43,12 +46,20 @@ public class WarRotationEntry : IRotationEntry, IDisposable
             MinLevel = _minLevel,
             MaxLevel = _maxLevel,
         };
-        rot.AddOpener(level => level < _minLevel ? null : new OpenerLv100猛攻());
+        rot.AddOpener(level => level < _minLevel ? null : GetOpener());
         rot.SetRotationEventHandler(new EventHandler());
         rot.AddTriggerAction(new TriggerActionQt(), new TriggerActionHotkey());
         rot.AddTriggerCondition(new TriggerCondQt());
         rot.AddCanUseHighPrioritySlotCheck(Helper.HighPrioritySlotCheckFunc);
         return rot;
+    }
+
+    IOpener? GetOpener()
+    {
+        if (Core.Me.Distance(Core.Me.GetCurrTarget()) > SettingMgr.GetSetting<GeneralSettings>().AttackRange)
+            return new Opener通用猛攻();
+        
+        return new Opener通用1起手();
     }
 
     public IRotationUI GetRotationUI()

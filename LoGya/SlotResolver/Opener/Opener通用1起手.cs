@@ -9,7 +9,7 @@ using LoGya.SlotResolver.Data;
 
 namespace LoGya.SlotResolver.Opener;
 
-public class OpenerLv100猛攻 : IOpener
+public class Opener通用1起手 : IOpener
 {
     public int StartCheck()
     {
@@ -33,8 +33,8 @@ public class OpenerLv100猛攻 : IOpener
     {
         Qt.Reset();
 
-        const int startTime = 15000;
-        countDownHandler.AddAction(700, Spells.猛攻, SpellTargetType.Target);
+        const int startTime = 1000;
+        countDownHandler.AddAction(300, Spells.重劈, SpellTargetType.Target);
     }
 
     private static void Step1(Slot slot)
@@ -54,7 +54,7 @@ public class OpenerLv100猛攻 : IOpener
     }
     private static void Step4(Slot slot)
     {
-        slot.Add(Spells.狂魂.GetSpell());
+        slot.Add(Spells.狂魂.GetSpell().IsUnlock() ? Spells.狂魂.GetSpell() : Spells.锯爆.GetSpell());
         slot.Add(Spells.动乱.GetSpell());
         if (Spells.战壕.GetSpell().IsReadyWithCanCast()) slot.Add(Spells.战壕.GetSpell());
     }
