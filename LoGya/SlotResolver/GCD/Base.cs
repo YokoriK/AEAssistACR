@@ -30,7 +30,7 @@ namespace LoGya.SlotResolver.GCD
                 return Data.Spells.超压斧;
             
             if (Data.Spells.红斩.IsUnlock() && 上个连击 == Data.Spells.凶残裂 && 
-                Helper.是否续红斩(Data.Buffs.战场暴风, 20000))
+                Helper.是否续红斩(Data.Buffs.战场暴风, 15000))
                 return Data.Spells.红斩;
             
             if (Data.Spells.绿斩.IsUnlock() && 上个连击 == Data.Spells.凶残裂)

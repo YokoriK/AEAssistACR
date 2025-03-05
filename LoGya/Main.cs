@@ -4,6 +4,7 @@ using LoGya.SlotResolver.GCD;
 using LoGya.QtUI;
 using LoGya.Common;
 using LoGya.SlotResolver.Ability;
+using LoGya.SlotResolver.Opener;
 using LoGya.Triggers;
 
 namespace LoGya;
@@ -19,12 +20,16 @@ public class WarRotationEntry : IRotationEntry, IDisposable
     private readonly List<SlotResolverData> _slotResolvers =
     [
         new(new 飞锯狂魂(),SlotMode.Gcd),
-        new(new Base(),SlotMode.Gcd),
+        new(new 蛮荒(), SlotMode.Gcd),
+        new(new Base(), SlotMode.Gcd),
+        new(new 飞斧(), SlotMode.Gcd),
         
-        new(new 战壕(),SlotMode.OffGcd),
         new(new 解放(),SlotMode.OffGcd),
-        new(new 动乱群山(),SlotMode.OffGcd),
-        new(new 猛攻(),SlotMode.OffGcd)
+        new(new 爆发药(), SlotMode.OffGcd),
+        new(new 怒震(), SlotMode.OffGcd),
+        new(new 动乱群山(), SlotMode.OffGcd),
+        new(new 猛攻(), SlotMode.OffGcd),
+        new(new 战壕(), SlotMode.OffGcd),
     ];
     
     public Rotation? Build(string settingFolder)
@@ -38,7 +43,7 @@ public class WarRotationEntry : IRotationEntry, IDisposable
             MinLevel = _minLevel,
             MaxLevel = _maxLevel,
         };
-        //rot.AddOpener(level => level < _minLevel ? null : new OpenerBase());
+        rot.AddOpener(level => level < _minLevel ? null : new OpenerLv100猛攻());
         //rot.SetRotationEventHandler(new EventHandler());
         rot.AddTriggerAction(new TriggerActionQt(), new TriggerActionHotkey());
         rot.AddTriggerCondition(new TriggerCondQt());

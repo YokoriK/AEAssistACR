@@ -22,6 +22,7 @@ public static class Qt
         Instance.SetQt("爆发药", false);
         Instance.SetQt("倾泻资源", true);
         Instance.SetQt("优先三锯", true);
+        Instance.SetQt("不留猛攻", false);
     }
     
     public static void Build()
@@ -34,6 +35,7 @@ public static class Qt
         Instance.AddQt("AOE", true);
         Instance.AddQt("倾泻资源", true, "不留战壕");
         Instance.AddQt("优先三锯", true, "优先打解放给的3个飞锯");
+        Instance.AddQt("不留猛攻", false, "默认留1层猛攻");
         
         Instance.AddHotkey("LB", new HotKeyResolver_LB());
         Instance.AddHotkey("防击退",

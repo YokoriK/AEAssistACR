@@ -32,10 +32,6 @@
             <Private>false</Private>
         </Reference>
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="SlotResolver\Opener\" />
-    </ItemGroup>
     
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
         <OutputPath>D:\Hack\AEAssist\ACR\LoGya</OutputPath>
