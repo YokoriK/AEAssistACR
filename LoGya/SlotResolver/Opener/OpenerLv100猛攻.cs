@@ -34,7 +34,7 @@ public class OpenerLv100猛攻 : IOpener
         Qt.Reset();
 
         const int startTime = 15000;
-        countDownHandler.AddAction(500, Data.Spells.猛攻, SpellTargetType.Target);
+        countDownHandler.AddAction(600, Data.Spells.猛攻, SpellTargetType.Target);
     }
 
     private static void Step1(Slot slot)

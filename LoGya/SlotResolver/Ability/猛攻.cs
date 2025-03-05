@@ -1,8 +1,7 @@
 ﻿using AEAssist;
-using AEAssist.CombatRoutine;
 using AEAssist.CombatRoutine.Module;
 using AEAssist.Helper;
-using AEAssist.JobApi;
+using AEAssist.Extension;
 using LoGya.QtUI;
 
 namespace LoGya.SlotResolver.Ability;
@@ -14,6 +13,7 @@ public class 猛攻 : ISlotResolver
     public int Check()
     {
         if(!Data.Spells.猛攻.GetSpell().IsReadyWithCanCast()) return -1;
+        if(!Core.Me.HasAura(Data.Buffs.战场暴风)) return -2;
         
         if(Data.Spells.猛攻.GetSpell().Charges >= 2 ) return 1;
         

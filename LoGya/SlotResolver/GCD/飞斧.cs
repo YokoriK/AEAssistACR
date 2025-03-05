@@ -1,7 +1,9 @@
 ﻿using AEAssist;
+using AEAssist.CombatRoutine;
 using AEAssist.CombatRoutine.Module;
 using AEAssist.Extension;
 using AEAssist.Helper;
+using AEAssist.MemoryApi;
 using LoGya.QtUI;
 
 
@@ -12,7 +14,7 @@ public class 飞斧 : ISlotResolver
 
     public int Check()
     {
-        if(Core.Me.Distance(Core.Me.GetCurrTarget()) > 3) return 1;
+        if(Core.Me.Distance(Core.Me.GetCurrTarget()! ) >  SettingMgr.GetSetting<GeneralSettings>().AttackRange) return 1;
         
         return -1;
     }
