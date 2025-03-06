@@ -20,14 +20,21 @@ namespace LoGya.SlotResolver.GCD
         private static uint GetSpells()
         {
             var enemyCount = TargetHelper.GetNearbyEnemyCount(5);
-            
+
             if (Qt.Instance.GetQt("群体续红斩") && 上个连击 == Data.Spells.超压斧)
-                return Data.Spells.秘银暴风; Qt.Instance.SetQt("群体续红斩", false);
+            {
+                Qt.Instance.SetQt("群体续红斩", false);
+                return Data.Spells.秘银暴风;
+            }
+
             if (Qt.Instance.GetQt("群体续红斩"))
                 return Data.Spells.超压斧;
-            
+
             if (Qt.Instance.GetQt("单体续红斩") && 上个连击 == Data.Spells.凶残裂)
-                return Data.Spells.红斩; Qt.Instance.SetQt("单体续红斩", false);
+            {
+                Qt.Instance.SetQt("单体续红斩", false);
+                return Data.Spells.红斩;
+            }
             if (Qt.Instance.GetQt("单体续红斩") && 上个连击 == Data.Spells.重劈)
                 return Data.Spells.凶残裂;
             if (Qt.Instance.GetQt("单体续红斩"))

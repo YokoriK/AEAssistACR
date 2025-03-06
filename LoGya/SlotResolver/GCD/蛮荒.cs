@@ -14,7 +14,12 @@ public class 蛮荒 : ISlotResolver
     {
         if (Qt.Instance.GetQt("优先三锯") && Core.Me.HasAura(Data.Buffs.原初的解放)) return -2;
         
-        if (Core.Me.HasAura(Data.Buffs.蛮荒崩裂预备)) return 1;
+        if (Core.Me.HasAura(Data.Buffs.蛮荒崩裂预备)) 
+            if (Qt.Instance.GetQt("无位移蛮荒") && Core.Me.Distance(Core.Me.GetCurrTarget()) > 0) return -3;
+            else
+            {
+                return 1;
+            }
         
         if (Core.Me.HasAura(Data.Buffs.尽毁预备)) return 2;
         
