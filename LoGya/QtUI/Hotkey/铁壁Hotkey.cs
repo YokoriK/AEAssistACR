@@ -43,7 +43,6 @@ public class 铁壁Hotkey : IHotkeyResolver
             HotkeyHelper.DrawDisabledState(size);
         }
         HotkeyHelper.DrawCooldownText(Spells.铁壁.GetSpell(), size);
-        HotkeyHelper.DrawChargeText(Spells.铁壁.GetSpell(), size);
     }
 
     public void Run()

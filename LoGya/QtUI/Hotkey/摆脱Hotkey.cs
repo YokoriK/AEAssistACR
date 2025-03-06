@@ -43,7 +43,6 @@ public class 摆脱Hotkey : IHotkeyResolver
             HotkeyHelper.DrawDisabledState(size);
         }
         HotkeyHelper.DrawCooldownText(Spells.摆脱.GetSpell(), size);
-        HotkeyHelper.DrawChargeText(Spells.摆脱.GetSpell(), size);
     }
 
     public void Run()

@@ -53,6 +53,8 @@ public class WarSettings
         QtUnVisibleList = []
     }; // QT设置存档
 
+    public int WarPartnerPanelIconSize = 47;
+    public bool WarPartnerPanelShow = true;
     public bool AutoUpdataTimeLines = true;
     public bool TimeLinesDebug = false;
 }

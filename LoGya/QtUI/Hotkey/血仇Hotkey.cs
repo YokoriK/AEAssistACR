@@ -49,7 +49,6 @@ public class 血仇Hotkey : IHotkeyResolver
             HotkeyHelper.DrawDisabledState(size);
         }
         HotkeyHelper.DrawCooldownText(Spells.血仇.GetSpell(), size);
-        HotkeyHelper.DrawChargeText(Spells.血仇.GetSpell(), size);
     }
 
     public void Run()

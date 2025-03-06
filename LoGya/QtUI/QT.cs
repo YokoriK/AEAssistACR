@@ -40,13 +40,13 @@ public static class Qt
         Instance.AddHotkey("大减", new 大减Hotkey());
         Instance.AddHotkey("铁壁", new 铁壁Hotkey());
         Instance.AddHotkey("血气", new 血气Hotkey());
-        Instance.AddHotkey("死斗", new 死斗Hotkey());
+        Instance.AddHotkey("死斗", new HotKeyResolver_NormalSpell(Spells.死斗, SpellTargetType.Self));
         Instance.AddHotkey("战栗", new 战栗Hotkey());
+        Instance.AddHotkey("泰然", new 泰然Hotkey());
         Instance.AddHotkey("血仇", new 血仇Hotkey());
         Instance.AddHotkey("摆脱", new 摆脱Hotkey());
-        Instance.AddHotkey("泰然", new 泰然Hotkey());
+        Instance.AddHotkey("勇猛pm2", new HotKeyResolver_NormalSpell(Spells.勇猛, SpellTargetType.Pm2));
         Instance.AddHotkey("挑衅", new 挑衅Hotkey());
-        Instance.AddHotkey("勇猛", new 勇猛Hotkey());
-        
+        Instance.AddHotkey("退避pm2", new HotKeyResolver_NormalSpell(Spells.退避, SpellTargetType.Pm2));
     }
 }

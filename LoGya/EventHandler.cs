@@ -22,7 +22,7 @@ public class EventHandler : IRotationEventHandler
         await Task.CompletedTask;
     }
     
-    public async Task OnPreCombat() //脱战时
+    public async Task OnPreCombat()
     {
         await Task.CompletedTask;
     }

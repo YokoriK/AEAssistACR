@@ -43,7 +43,6 @@ public class 血气Hotkey : IHotkeyResolver
             HotkeyHelper.DrawDisabledState(size);
         }
         HotkeyHelper.DrawCooldownText(Spells.血气switch.GetSpell(), size);
-        HotkeyHelper.DrawChargeText(Spells.血气switch.GetSpell(), size);
     }
 
     public void Run()

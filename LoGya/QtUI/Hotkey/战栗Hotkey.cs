@@ -43,7 +43,6 @@ public class 战栗Hotkey : IHotkeyResolver
             HotkeyHelper.DrawDisabledState(size);
         }
         HotkeyHelper.DrawCooldownText(Spells.战栗.GetSpell(), size);
-        HotkeyHelper.DrawChargeText(Spells.战栗.GetSpell(), size);
     }
 
     public void Run()

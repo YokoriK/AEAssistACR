@@ -49,7 +49,6 @@ public class 挑衅Hotkey : IHotkeyResolver
             HotkeyHelper.DrawDisabledState(size);
         }
         HotkeyHelper.DrawCooldownText(Spells.挑衅.GetSpell(), size);
-        HotkeyHelper.DrawChargeText(Spells.挑衅.GetSpell(), size);
     }
 
     public void Run()

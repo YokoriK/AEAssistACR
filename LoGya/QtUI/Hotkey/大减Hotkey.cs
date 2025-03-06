@@ -43,7 +43,6 @@ public class 大减Hotkey : IHotkeyResolver
             HotkeyHelper.DrawDisabledState(size);
         }
         HotkeyHelper.DrawCooldownText(Spells.大减.GetSpell(), size);
-        HotkeyHelper.DrawChargeText(Spells.大减.GetSpell(), size);
     }
 
     public void Run()

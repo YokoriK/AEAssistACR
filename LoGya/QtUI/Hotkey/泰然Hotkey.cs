@@ -43,7 +43,6 @@ public class 泰然Hotkey : IHotkeyResolver
             HotkeyHelper.DrawDisabledState(size);
         }
         HotkeyHelper.DrawCooldownText(Spells.泰然.GetSpell(), size);
-        HotkeyHelper.DrawChargeText(Spells.泰然.GetSpell(), size);
     }
 
     public void Run()
