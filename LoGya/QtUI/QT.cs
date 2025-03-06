@@ -17,10 +17,13 @@ public static class Qt
     public static void Reset()
     {
         Instance.SetQt("AOE", true);
-        Instance.SetQt("爆发药", false);
         Instance.SetQt("倾泻资源", true);
         Instance.SetQt("优先三锯", true);
         Instance.SetQt("不留猛攻", false);
+        Instance.SetQt("群体续红斩",false);
+        Instance.SetQt("单体续红斩",false);
+        Instance.SetQt("无位移蛮荒", false);
+        Instance.SetQt("无位移猛攻", false);
     }
     
     public static void Build()
@@ -28,9 +31,13 @@ public static class Qt
         Instance = new JobViewWindow(WarSettings.Instance.JobViewSave, WarSettings.Instance.Save, "Logya战士");
         Instance.AddQt("爆发药", false);
         Instance.AddQt("AOE", true);
-        Instance.AddQt("倾泻资源", true, "不留战壕，超过80兽魂才打fc");
+        Instance.AddQt("倾泻资源", true, "关闭后留战壕，超过80兽魂才打fc");
         Instance.AddQt("优先三锯", true, "优先打解放给的3个飞锯");
         Instance.AddQt("不留猛攻", false, "默认留1层猛攻");
+        Instance.AddQt("群体续红斩",false,"aoe3连续一次红斩，用于boss上天前等情况");
+        Instance.AddQt("单体续红斩",false,"单体2连续一次红斩，用于boss上天前等情况");
+        Instance.AddQt("无位移蛮荒", false, "仅在不产生位移的情况下使用蛮荒崩裂");
+        Instance.AddQt("无位移猛攻", false, "仅在不产生位移的情况下使用猛攻");
         
         Instance.AddHotkey("LB", new HotKeyResolver_LB());
         Instance.AddHotkey("防击退",
@@ -48,5 +55,6 @@ public static class Qt
         Instance.AddHotkey("勇猛pm2", new HotKeyResolver_NormalSpell(Spells.勇猛, SpellTargetType.Pm2));
         Instance.AddHotkey("挑衅", new 挑衅Hotkey());
         Instance.AddHotkey("退避pm2", new HotKeyResolver_NormalSpell(Spells.退避, SpellTargetType.Pm2));
+        Instance.AddHotkey("开关盾", new HotKeyResolver_NormalSpell(Spells.守护, SpellTargetType.Self));
     }
 }

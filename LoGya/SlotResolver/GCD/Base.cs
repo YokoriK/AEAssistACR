@@ -21,6 +21,18 @@ namespace LoGya.SlotResolver.GCD
         {
             var enemyCount = TargetHelper.GetNearbyEnemyCount(5);
             
+            if (Qt.Instance.GetQt("群体续红斩") && 上个连击 == Data.Spells.超压斧)
+                return Data.Spells.秘银暴风; Qt.Instance.SetQt("群体续红斩", false);
+            if (Qt.Instance.GetQt("群体续红斩"))
+                return Data.Spells.超压斧;
+            
+            if (Qt.Instance.GetQt("单体续红斩") && 上个连击 == Data.Spells.凶残裂)
+                return Data.Spells.红斩; Qt.Instance.SetQt("单体续红斩", false);
+            if (Qt.Instance.GetQt("单体续红斩") && 上个连击 == Data.Spells.重劈)
+                return Data.Spells.凶残裂;
+            if (Qt.Instance.GetQt("单体续红斩"))
+                return Data.Spells.重劈;
+            
             if (Qt.Instance.GetQt("AOE") && Data.Spells.秘银暴风.IsUnlock() &&
                 上个连击 == Data.Spells.超压斧 && enemyCount == 2 && Core.Me.Level == 80)
                 return Data.Spells.秘银暴风;

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoGya")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f9008b03fa8d42a838902b875b533aa9b4c1beb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1cf3c3078719509202d3207b4e9de5385a3e574")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoGya")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoGya")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
