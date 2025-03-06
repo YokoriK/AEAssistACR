@@ -26,7 +26,7 @@ public class Opener通用1起手 : IOpener
     
     public List<Action<Slot>> Sequence { get; } =
     [
-        Step1, Step2, Step3, Step4
+        Step1, Step2, Step3, Step4, Step5
     ];
 
     public void InitCountDown(CountDownHandler countDownHandler)
@@ -56,6 +56,12 @@ public class Opener通用1起手 : IOpener
     {
         slot.Add(Spells.狂魂.GetSpell().IsUnlock() ? Spells.狂魂.GetSpell() : Spells.锯爆.GetSpell());
         if (Spells.动乱.GetSpell().IsReadyWithCanCast()) slot.Add(Spells.动乱.GetSpell());
+        if (Spells.猛攻.GetSpell().IsReadyWithCanCast()) slot.Add(Spells.猛攻.GetSpell());
+    }
+    
+    private static void Step5(Slot slot)
+    {
+        slot.Add(Spells.锯爆.GetSpell());
         if (Spells.战壕.GetSpell().IsReadyWithCanCast() && Core.Me.Level >= 72) slot.Add(Spells.战壕.GetSpell());
     }
 }

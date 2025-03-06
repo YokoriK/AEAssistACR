@@ -58,4 +58,5 @@ public class Opener通用猛攻 : IOpener
         if (Spells.动乱.GetSpell().IsReadyWithCanCast()) slot.Add(Spells.动乱.GetSpell());
         if (Spells.战壕.GetSpell().IsReadyWithCanCast() && Core.Me.Level >= 72) slot.Add(Spells.战壕.GetSpell());
     }
+    
 }

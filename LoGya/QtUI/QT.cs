@@ -36,7 +36,7 @@ public static class Qt
         Instance = new JobViewWindow(WarSettings.Instance.JobViewSave, WarSettings.Instance.Save, "Logya战士");
         Instance.AddQt("爆发药", false);
         Instance.AddQt("AOE", true);
-        Instance.AddQt("倾泻资源", true, "关闭后留战壕，超过80兽魂才打fc");
+        Instance.AddQt("倾泻资源", true, "关闭后控制兽魂和战嚎恰好不溢出");
         Instance.AddQt("优先三锯", true, "优先打解放给的3个飞锯");
         Instance.AddQt("动乱", true);
         Instance.AddQt("战嚎", true);
@@ -44,8 +44,8 @@ public static class Qt
         Instance.AddQt("猛攻", true);
         Instance.AddQt("fc", true);
         Instance.AddQt("不留猛攻", false, "默认留1层猛攻");
-        Instance.AddQt("群体续红斩",false,"aoe3连续一次红斩，用于boss上天前等情况");
-        Instance.AddQt("单体续红斩",false,"单体2连续一次红斩，用于boss上天前等情况");
+        Instance.AddQt("群体续红斩",false,"aoe2连续一次红斩，用于boss上天前等情况");
+        Instance.AddQt("单体续红斩",false,"单体3连续一次红斩，用于boss上天前等情况");
         Instance.AddQt("无位移蛮荒", false, "仅在不产生位移的情况下使用蛮荒崩裂");
         Instance.AddQt("无位移猛攻", false, "仅在不产生位移的情况下使用猛攻");
         
