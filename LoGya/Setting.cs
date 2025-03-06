@@ -52,7 +52,7 @@ public class WarSettings
         QtLineCount = 2,
         QtUnVisibleList = []
     }; // QT设置存档
-
+    
     public int WarPartnerPanelIconSize = 47;
     public bool WarPartnerPanelShow = true;
     public bool AutoUpdataTimeLines = true;

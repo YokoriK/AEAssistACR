@@ -12,8 +12,8 @@ public class 动乱群山 : ISlotResolver
     
     public int Check()
     {
-        if(!Data.Spells.动乱.GetSpell().IsReadyWithCanCast()) return -1;
-        if(!Qt.Instance.GetQt("动乱")) return -2;
+        if (!Data.Spells.动乱.GetSpell().IsReadyWithCanCast()) return -1;
+        if (!Qt.Instance.GetQt("动乱")) return -2;
         if (!Core.Me.HasAura(Data.Buffs.战场暴风)) return -3;
         
         return 0;

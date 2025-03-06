@@ -53,6 +53,15 @@ public class 挑衅Hotkey : IHotkeyResolver
 
     public void Run()
     {
+        if (GCDHelper.GetGCDCooldown() < 700)
+            挑衅(GCDHelper.GetGCDCooldown() + 100);
+    }
+    
+    private async Task 挑衅(int delay = 0)
+    {
+        if (delay > 0) 
+            await Coroutine.Instance.WaitAsync(delay);
+
         AI.Instance.BattleData.AddSpell2NextSlot(Spells.挑衅.GetSpell());
     }
 }

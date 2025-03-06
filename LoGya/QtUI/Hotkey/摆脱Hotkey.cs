@@ -2,6 +2,7 @@
 using AEAssist.CombatRoutine.Module;
 using AEAssist.CombatRoutine.View.JobView;
 using AEAssist.Helper;
+using AEAssist;
 using LoGya.SlotResolver.Data;
 
 namespace LoGya.QtUI.Hotkey;
@@ -47,6 +48,15 @@ public class 摆脱Hotkey : IHotkeyResolver
 
     public void Run()
     {
+        if (GCDHelper.GetGCDCooldown() < 700)
+            摆脱(GCDHelper.GetGCDCooldown() + 100);
+    }
+    
+    private async Task 摆脱(int delay = 0)
+    {
+        if (delay > 0) 
+            await Coroutine.Instance.WaitAsync(delay);
+
         AI.Instance.BattleData.AddSpell2NextSlot(Spells.摆脱.GetSpell());
     }
 }

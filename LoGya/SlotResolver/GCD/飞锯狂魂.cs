@@ -17,6 +17,7 @@ public class 飞锯狂魂 : ISlotResolver
     public int Check()
     {
         if (!Qt.Instance.GetQt("fc")) return -2;
+        if (!Core.Me.HasAura(Data.Buffs.战场暴风)) return -3;
         if (Core.Me.HasAura(Data.Buffs.原初的解放)) return 1;
         
         if (兽魂 < 50) return -1;

@@ -53,6 +53,15 @@ public class 血仇Hotkey : IHotkeyResolver
 
     public void Run()
     {
+        if (GCDHelper.GetGCDCooldown() < 700)
+            血仇(GCDHelper.GetGCDCooldown() + 100);
+    }
+    
+    private async Task 血仇(int delay = 0)
+    {
+        if (delay > 0) 
+            await Coroutine.Instance.WaitAsync(delay);
+
         AI.Instance.BattleData.AddSpell2NextSlot(Spells.血仇.GetSpell());
     }
 }

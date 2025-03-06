@@ -33,7 +33,7 @@ public static class Qt
     
     public static void Build()
     {
-        Instance = new JobViewWindow(WarSettings.Instance.JobViewSave, WarSettings.Instance.Save, "Logya战士");
+        Instance = new JobViewWindow(WarSettings.Instance.JobViewSave, WarSettings.Instance.Save, "LoGya战士");
         Instance.AddQt("爆发药", false);
         Instance.AddQt("AOE", true);
         Instance.AddQt("倾泻资源", true, "关闭后控制兽魂和战嚎恰好不溢出");
@@ -62,9 +62,10 @@ public static class Qt
         Instance.AddHotkey("泰然", new 泰然Hotkey());
         Instance.AddHotkey("血仇", new 血仇Hotkey());
         Instance.AddHotkey("摆脱", new 摆脱Hotkey());
-        Instance.AddHotkey("勇猛pm2", new HotKeyResolver_NormalSpell(Spells.勇猛, SpellTargetType.Pm2));
         Instance.AddHotkey("挑衅", new 挑衅Hotkey());
-        Instance.AddHotkey("退避pm2", new HotKeyResolver_NormalSpell(Spells.退避, SpellTargetType.Pm2));
+        Instance.AddHotkey("退避pm2", new 退避hotkey(1));
         Instance.AddHotkey("开关盾", new HotKeyResolver_NormalSpell(Spells.守护, SpellTargetType.Self));
+        
+        勇猛hotkeyWindow.Build(Instance);
     }
 }

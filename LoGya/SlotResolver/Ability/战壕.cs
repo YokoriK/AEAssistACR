@@ -1,5 +1,6 @@
 ﻿using AEAssist;
 using AEAssist.CombatRoutine.Module;
+using AEAssist.Extension;
 using AEAssist.JobApi;
 using AEAssist.Helper;
 using LoGya.QtUI;
@@ -13,8 +14,9 @@ public class 战壕 : ISlotResolver
     public int Check()
     {
         if (兽魂 > 50) return -1;
-        if(!Data.Spells.战壕.GetSpell().IsReadyWithCanCast()) return -2;
-        if(!Qt.Instance.GetQt("战嚎")) return -3;
+        if (!Data.Spells.战壕.GetSpell().IsReadyWithCanCast()) return -2;
+        if (!Qt.Instance.GetQt("战嚎")) return -3;
+        if (Core.Me.HasAura(Data.Buffs.原初的混沌)) return -4;
         
         if(Qt.Instance.GetQt("倾泻资源")) return 1;
         
