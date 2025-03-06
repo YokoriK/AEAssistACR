@@ -48,8 +48,10 @@ public class 铁壁Hotkey : IHotkeyResolver
 
     public void Run()
     {
-        if (GCDHelper.GetGCDCooldown() < 700)
-            铁壁(GCDHelper.GetGCDCooldown() + 100);
+        //if (GCDHelper.GetGCDCooldown() < 700)
+            //铁壁(GCDHelper.GetGCDCooldown() + 100);
+            
+        AI.Instance.BattleData.AddSpell2NextSlot(Spells.铁壁.GetSpell());
     }
     
     private async Task 铁壁(int delay = 0)

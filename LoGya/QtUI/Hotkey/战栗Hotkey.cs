@@ -48,8 +48,10 @@ public class 战栗Hotkey : IHotkeyResolver
 
     public void Run()
     {
-        if (GCDHelper.GetGCDCooldown() < 700)
-            战栗(GCDHelper.GetGCDCooldown() + 100);
+        //if (GCDHelper.GetGCDCooldown() < 700)
+            //战栗(GCDHelper.GetGCDCooldown() + 100);
+        
+        AI.Instance.BattleData.AddSpell2NextSlot(Spells.战栗.GetSpell());
     }
     
     private async Task 战栗(int delay = 0)

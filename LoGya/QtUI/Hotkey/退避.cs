@@ -47,6 +47,7 @@ public class 退避hotkey(int index) : IHotkeyResolver
 
     private int _check()
     {
+        if(PartyHelper.Party.Count < 2 ) return -1;
         if (!PartyHelper.Party[index].IsTargetable ||
             PartyHelper.Party[index].IsDead() ||
             Core.Me.Distance(PartyHelper.Party[index]) > SettingMgr.GetSetting<GeneralSettings>().AttackRange + 27 ||
@@ -58,7 +59,7 @@ public class 退避hotkey(int index) : IHotkeyResolver
     public void Run()
     {
         var partyMembers = PartyHelper.Party;
-        if (partyMembers.Count < index + 1)
+        if (partyMembers.Count < 2)
             return;
 
         var slot = new Slot();

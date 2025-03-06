@@ -48,8 +48,10 @@ public class 血气Hotkey : IHotkeyResolver
 
     public void Run()
     {
-        if (GCDHelper.GetGCDCooldown() < 700)
-            血气(GCDHelper.GetGCDCooldown() + 100);
+        //if (GCDHelper.GetGCDCooldown() < 700)
+            //血气(GCDHelper.GetGCDCooldown() + 100);
+        
+        AI.Instance.BattleData.AddSpell2NextSlot(Spells.血气switch.GetSpell());
     }
     
     private async Task 血气(int delay = 0)

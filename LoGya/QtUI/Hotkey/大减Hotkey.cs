@@ -48,8 +48,10 @@ public class 大减Hotkey : IHotkeyResolver
 
     public void Run()
     {
-        if (GCDHelper.GetGCDCooldown() < 700)
-            大减(GCDHelper.GetGCDCooldown() + 100);
+        //if (GCDHelper.GetGCDCooldown() < 700)
+            //大减(GCDHelper.GetGCDCooldown() + 100);
+        
+        AI.Instance.BattleData.AddSpell2NextSlot(Spells.大减.GetSpell());
     }
     
     private async Task 大减(int delay = 0)

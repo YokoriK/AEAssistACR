@@ -48,8 +48,9 @@ public class 泰然Hotkey : IHotkeyResolver
 
     public void Run()
     {
-        if (GCDHelper.GetGCDCooldown() < 700)
-            泰然(GCDHelper.GetGCDCooldown() + 100);
+        //if (GCDHelper.GetGCDCooldown() < 700)
+           // 泰然(GCDHelper.GetGCDCooldown() + 100);
+        AI.Instance.BattleData.AddSpell2NextSlot(Spells.泰然.GetSpell());
     }
     
     private async Task 泰然(int delay = 0)

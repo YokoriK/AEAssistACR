@@ -28,9 +28,9 @@ public static class 勇猛hotkeyWindow
                 LockWindow = WarSettings.Instance.JobViewSave.LockWindow
             };
 
-            WarPartnerPanel = new HotkeyWindow(myJobViewSave, "SgePartnerPanel")
+            WarPartnerPanel = new HotkeyWindow(myJobViewSave, "WarPartnerPanel")
             {
-                HotkeyLineCount = 2
+                HotkeyLineCount = 1
             };
 
             for (var i = 1; i < PartyHelper.Party.Count; i++)

@@ -48,8 +48,10 @@ public class 摆脱Hotkey : IHotkeyResolver
 
     public void Run()
     {
-        if (GCDHelper.GetGCDCooldown() < 700)
-            摆脱(GCDHelper.GetGCDCooldown() + 100);
+        //if (GCDHelper.GetGCDCooldown() < 700)
+            //摆脱(GCDHelper.GetGCDCooldown() + 100);
+        
+        AI.Instance.BattleData.AddSpell2NextSlot(Spells.摆脱.GetSpell());
     }
     
     private async Task 摆脱(int delay = 0)
