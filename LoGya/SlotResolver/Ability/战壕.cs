@@ -14,6 +14,7 @@ public class 战壕 : ISlotResolver
     {
         if (兽魂 > 50) return -1;
         if(!Data.Spells.战壕.GetSpell().IsReadyWithCanCast()) return -2;
+        if(!Qt.Instance.GetQt("战嚎")) return -3;
         
         if(Qt.Instance.GetQt("倾泻资源")) return 1;
         

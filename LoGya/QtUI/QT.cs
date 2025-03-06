@@ -19,6 +19,11 @@ public static class Qt
         Instance.SetQt("AOE", true);
         Instance.SetQt("倾泻资源", true);
         Instance.SetQt("优先三锯", true);
+        Instance.SetQt("动乱", true);
+        Instance.SetQt("战嚎", true);
+        Instance.SetQt("解放", true);
+        Instance.SetQt("猛攻", true);
+        Instance.SetQt("fc", true);
         Instance.SetQt("不留猛攻", false);
         Instance.SetQt("群体续红斩",false);
         Instance.SetQt("单体续红斩",false);
@@ -33,6 +38,11 @@ public static class Qt
         Instance.AddQt("AOE", true);
         Instance.AddQt("倾泻资源", true, "关闭后留战壕，超过80兽魂才打fc");
         Instance.AddQt("优先三锯", true, "优先打解放给的3个飞锯");
+        Instance.AddQt("动乱", true);
+        Instance.AddQt("战嚎", true);
+        Instance.AddQt("解放", true);
+        Instance.AddQt("猛攻", true);
+        Instance.AddQt("fc", true);
         Instance.AddQt("不留猛攻", false, "默认留1层猛攻");
         Instance.AddQt("群体续红斩",false,"aoe3连续一次红斩，用于boss上天前等情况");
         Instance.AddQt("单体续红斩",false,"单体2连续一次红斩，用于boss上天前等情况");

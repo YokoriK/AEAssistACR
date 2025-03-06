@@ -13,10 +13,10 @@ public class 飞锯狂魂 : ISlotResolver
     private static int 兽魂 => Core.Resolve<JobApi_Warrior>().BeastGauge;
     public int Check()
     {
+        if (!Qt.Instance.GetQt("fc")) return -2;
         if (Core.Me.HasAura(Data.Buffs.原初的解放)) return 1;
         
         if (兽魂 < 50) return -1;
-        if(!Core.Me.HasAura(Data.Buffs.战场暴风)) return -2;
         
         if (兽魂 >= 80) return 2;
         
