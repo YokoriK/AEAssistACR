@@ -27,8 +27,6 @@ public static class Qt
         Instance.SetQt("不留猛攻", false);
         Instance.SetQt("群体续红斩",false);
         Instance.SetQt("单体续红斩",false);
-        Instance.SetQt("无位移蛮荒", false);
-        Instance.SetQt("无位移猛攻", false);
     }
     
     public static void Build()
@@ -46,8 +44,8 @@ public static class Qt
         Instance.AddQt("不留猛攻", false, "默认留1层猛攻");
         Instance.AddQt("群体续红斩",false,"aoe2连续一次红斩，用于boss上天前等情况");
         Instance.AddQt("单体续红斩",false,"单体3连续一次红斩，用于boss上天前等情况");
-        Instance.AddQt("无位移蛮荒", false, "仅在不产生位移的情况下使用蛮荒崩裂");
-        Instance.AddQt("无位移猛攻", false, "仅在不产生位移的情况下使用猛攻");
+        Instance.AddQt("无位移蛮荒", true, "仅在不产生位移的情况下使用蛮荒崩裂");
+        Instance.AddQt("无位移猛攻", true, "仅在不产生位移的情况下使用猛攻");
         
         Instance.AddHotkey("LB", new HotKeyResolver_LB());
         Instance.AddHotkey("防击退",

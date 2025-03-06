@@ -2,8 +2,10 @@
 using AEAssist.CombatRoutine;
 using AEAssist.CombatRoutine.Module;
 using AEAssist.CombatRoutine.Module.Opener;
+using AEAssist.Extension;
 using AEAssist.Helper;
 using AEAssist.MemoryApi;
+using AEAssist.JobApi;
 using LoGya.QtUI;
 using LoGya.SlotResolver.Data;
 
@@ -39,8 +41,8 @@ public class Opener通用猛攻 : IOpener
 
     private static void Step1(Slot slot)
     {
-        if(Core.Resolve<MemApiSpell>().GetLastComboSpellId() != Spells.重劈) slot.Add(Spells.重劈.GetSpell());
-        slot.Add(Spells.战壕.GetSpell());
+        if (Core.Resolve<MemApiSpell>().GetLastComboSpellId() != Spells.重劈) slot.Add(Spells.重劈.GetSpell());
+        if (!Core.Me.HasAura(Buffs.原初的混沌) && Core.Resolve<JobApi_Warrior>().BeastGauge <= 50) slot.Add(Spells.战壕.GetSpell());
     }
     private static void Step2(Slot slot)
     {
@@ -56,7 +58,7 @@ public class Opener通用猛攻 : IOpener
     {
         slot.Add(Spells.狂魂.GetSpell().IsUnlock() ? Spells.狂魂.GetSpell() : Spells.锯爆.GetSpell());
         if (Spells.动乱.GetSpell().IsReadyWithCanCast()) slot.Add(Spells.动乱.GetSpell());
-        if (Spells.战壕.GetSpell().IsReadyWithCanCast() && Core.Me.Level >= 72) slot.Add(Spells.战壕.GetSpell());
+        if (Spells.战壕.GetSpell().IsReadyWithCanCast() && Core.Me.Level >= 72 && Core.Resolve<JobApi_Warrior>().BeastGauge <= 50) slot.Add(Spells.战壕.GetSpell());
     }
     
 }
