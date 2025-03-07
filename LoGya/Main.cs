@@ -31,7 +31,8 @@ public class WarRotationEntry : IRotationEntry, IDisposable
         new(new 飞锯狂魂(),SlotMode.Gcd),
         new(new Base(), SlotMode.Gcd),
         
-        new(new 自动团减(), SlotMode.OffGcd),
+        new(new 自动血仇(), SlotMode.OffGcd),
+        new(new 自动摆脱(), SlotMode.OffGcd),
         new(new 自动血气(), SlotMode.OffGcd),
         new(new 解放(),SlotMode.OffGcd),
         new(new 爆发药(), SlotMode.OffGcd),
