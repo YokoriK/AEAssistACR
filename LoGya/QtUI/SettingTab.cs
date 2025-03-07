@@ -17,7 +17,9 @@ public class SettingTab
         ImGui.Checkbox("自动控制攒资源", ref WarSettings.Instance.自动控制攒资源);
         ImGuiHelper.SetHoverTooltip("开启后，将自动控制在爆发药期间倾泻资源");
         ImGui.Checkbox("自动血气", ref WarSettings.Instance.自动血气);
-        ImGuiHelper.SetHoverTooltip("开启后，检测到目标释放死刑会卡4s自动释放血气");
+        ImGuiHelper.SetHoverTooltip("开启后，检测到目标释放死刑会自动释放血气");
+        ImGui.Checkbox("双尽毁", ref WarSettings.Instance.双尽毁);
+        ImGuiHelper.SetHoverTooltip("是否留双尽毁打进爆发药");
     }
 
     public static void Build(JobViewWindow instance)

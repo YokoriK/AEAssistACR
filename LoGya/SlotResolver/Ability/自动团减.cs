@@ -13,7 +13,7 @@ public class 自动团减 : ISlotResolver
         if (!Data.Spells.摆脱.GetSpell().IsReadyWithCanCast() && !Data.Spells.血仇.GetSpell().IsReadyWithCanCast() ) return -2;
         if (Core.Me.GetCurrTarget() == null) return -3;
         
-        if (TargetHelper.targetCastingIsBossAOE(Core.Me.GetCurrTarget(), 50000)) return 1;
+        if (TargetHelper.targetCastingIsBossAOE(Core.Me.GetCurrTarget(), 5000)) return 1;
         
         return -1;
     }

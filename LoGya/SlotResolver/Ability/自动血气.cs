@@ -13,7 +13,7 @@ public class 自动血气 : ISlotResolver
         if (!Data.Spells.血气switch.GetSpell().IsReadyWithCanCast()) return -2;
         if (Core.Me.GetCurrTarget() == null) return -3;
         
-        if (TargetHelper.targetCastingIsDeathSentenceWithTime(Core.Me.GetCurrTarget(), 40000)) return 1;
+        if (TargetHelper.targetCastingIsDeathSentenceWithTime(Core.Me.GetCurrTarget(), 2500)) return 1;
         
         return -1;
     }

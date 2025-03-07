@@ -24,7 +24,7 @@ public class 飞锯狂魂 : ISlotResolver
         
         if (兽魂 >= 90 && 上个连击 == Data.Spells.凶残裂 && !Helper.是否续红斩(Data.Buffs.战场暴风, 15000)) return 2;
         
-        if(兽魂 == 100 && (上个连击 == Data.Spells.凶残裂 || 上个连击 == Data.Spells.重劈)) return 3;
+        if (兽魂 == 100 && (上个连击 == Data.Spells.凶残裂 || 上个连击 == Data.Spells.重劈)) return 3;
 
         if (兽魂 >= 50 && Data.Spells.战壕.GetSpell().Cooldown.TotalMilliseconds < 10000) return 4;
         

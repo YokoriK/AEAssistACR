@@ -19,6 +19,9 @@ public class WarRotationEntry : IRotationEntry, IDisposable
     private readonly AcrType _acrType = AcrType.HighEnd; //高难专用
     private readonly int _minLevel = 70;
     private readonly int _maxLevel = 100;
+
+    private readonly string _description = "你说的对但是\n" +
+                                           "龙眼就是荔枝，荔枝就是龙眼";
     
     private readonly List<SlotResolverData> _slotResolvers =
     [
@@ -48,6 +51,7 @@ public class WarRotationEntry : IRotationEntry, IDisposable
             AcrType = _acrType,
             MinLevel = _minLevel,
             MaxLevel = _maxLevel,
+            Description = _description,
         };
         rot.AddOpener(level => level < _minLevel ? null : GetOpener());
         rot.SetRotationEventHandler(new EventHandler());
