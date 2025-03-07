@@ -30,8 +30,8 @@ public class EventHandler : IRotationEventHandler
 
     public void AfterSpell(Slot slot, Spell spell)
     {
-        if (Spell.CreatePotion().Cooldown.TotalMilliseconds <= 40000 && Core.Me.GetCurrTarget().CurrentHpPercent() > 0.1) Qt.Instance.SetQt("倾泻资源", false);
-        if (Core.Me.HasAura(49)) Qt.Instance.SetQt("倾泻资源", true);
+        if (Spell.CreatePotion().Cooldown.TotalMilliseconds <= 40000 && Core.Me.GetCurrTarget().CurrentHpPercent() > 0.1 && WarSettings.Instance.自动控制攒资源) Qt.Instance.SetQt("倾泻资源", false);
+        if (Core.Me.HasAura(49) && WarSettings.Instance.自动控制攒资源) Qt.Instance.SetQt("倾泻资源", true);
     }
     
     public void OnBattleUpdate(int currTimeInMs)

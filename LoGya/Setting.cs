@@ -55,6 +55,10 @@ public class WarSettings
     
     public int WarPartnerPanelIconSize = 47;
     public bool WarPartnerPanelShow = true;
+    public bool 自动团减 = true;
+    public bool 自动控制攒资源 = true;
+    public bool 自动血气 = true;
+    
     public bool AutoUpdataTimeLines = true;
     public bool TimeLinesDebug = false;
 }

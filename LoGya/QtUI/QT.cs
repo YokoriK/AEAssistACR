@@ -64,6 +64,8 @@ public static class Qt
         Instance.AddHotkey("退避pm2", new 退避hotkey(1));
         Instance.AddHotkey("开关盾", new HotKeyResolver_NormalSpell(Spells.守护, SpellTargetType.Self));
         
+        SettingTab.Build(Instance);
+        
         勇猛hotkeyWindow.Build(Instance);
     }
 }
