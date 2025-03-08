@@ -52,17 +52,18 @@ public static class Qt
             new HotKeyResolver(SpellsDefine.ArmsLength, SpellTargetType.Self, false));
         Instance.AddHotkey("疾跑", new HotKeyResolver_疾跑());
         Instance.AddHotkey("爆发药", new HotKeyResolver_Potion());
-        Instance.AddHotkey("大减", new 大减Hotkey());
-        Instance.AddHotkey("铁壁", new 铁壁Hotkey());
-        Instance.AddHotkey("血气", new 血气Hotkey());
-        Instance.AddHotkey("死斗", new HotKeyResolver_NormalSpell(Spells.死斗, SpellTargetType.Self));
-        Instance.AddHotkey("战栗", new 战栗Hotkey());
-        Instance.AddHotkey("泰然", new 泰然Hotkey());
-        Instance.AddHotkey("血仇", new 血仇Hotkey());
-        Instance.AddHotkey("摆脱", new 摆脱Hotkey());
+        //Instance.AddHotkey("大减", new 大减Hotkey());
+        Instance.AddHotkey("大减", new HotKeyResolver(Spells.大减, SpellTargetType.Self, false));
+        Instance.AddHotkey("铁壁", new HotKeyResolver(Spells.铁壁, SpellTargetType.Self, false));
+        Instance.AddHotkey("血气", new HotKeyResolver(Spells.血气switch, SpellTargetType.Self, false));
+        Instance.AddHotkey("死斗", new HotKeyResolver(Spells.死斗, SpellTargetType.Self, false));
+        Instance.AddHotkey("战栗", new HotKeyResolver(Spells.战栗, SpellTargetType.Self, false));
+        Instance.AddHotkey("泰然", new HotKeyResolver(Spells.泰然, SpellTargetType.Self, false));
+        Instance.AddHotkey("血仇", new HotKeyResolver(Spells.血仇, SpellTargetType.Self, false));
+        Instance.AddHotkey("摆脱", new HotKeyResolver(Spells.摆脱, SpellTargetType.Self, false));
         Instance.AddHotkey("挑衅", new 挑衅Hotkey());
         Instance.AddHotkey("退避pm2", new 退避hotkey(1));
-        Instance.AddHotkey("开关盾", new HotKeyResolver_NormalSpell(Spells.守护, SpellTargetType.Self));
+        Instance.AddHotkey("开关盾", new HotKeyResolver(Spells.守护, SpellTargetType.Self, false));
         
         SettingTab.Build(Instance);
         
